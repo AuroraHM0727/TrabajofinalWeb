@@ -1,0 +1,503 @@
+:root{
+ --main:#b889ef;
+ --soft:#fbdde7;
+ --dark:#7c51c6;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:'Poppins', sans-serif;
+}
+
+body{
+ background:linear-gradient(180deg,#fbdde7,#ffffff);
+ color:#605c5c;
+}
+
+/* HERO */ 
+.hero{
+ background:linear-gradient(135deg,var(--main),var(--dark));
+ color:white;
+ text-align:center;
+ padding:80px 20px;
+}
+
+.hero h1{font-size:3.4rem;}
+.hero p{opacity:.9;margin-top:10px;font-weight:300;}
+
+/* CONTENEDOR */
+.container{
+ width:90%;
+ max-width:1000px;
+ margin:auto;
+ padding:40px 0;
+}
+
+/* TARJETAS */
+.card{
+ background:white;
+ padding:25px;
+ border-radius:14px;
+ box-shadow:0 10px 30px rgba(180,136,189,0.08);
+ margin-bottom:25px;
+}
+
+.center-title h2{
+ text-align:center;
+ margin-bottom:15px;
+}
+
+/* GRID */
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:20px;
+}
+
+.skill{
+ background:var(--soft);
+ padding:10px;
+ border-radius:8px;
+ margin-top:8px;
+}
+
+/* PROYECTOS */
+.projects{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:22px;
+ margin-top:15px;
+}
+
+.project{
+ background:white;
+ border-radius:14px;
+ overflow:hidden;
+ box-shadow:0 10px 30px rgba(0,0,0,.08);
+ transition:.35s;
+}
+
+.project:hover{
+ transform:translateY(-8px) scale(1.02);
+ box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+
+.project-img{position:relative;overflow:hidden;}
+
+.project-img img{
+ width:100%;
+ height:160px;
+ object-fit:cover;
+ transition:transform .6s ease;
+}
+
+.project:hover img{transform:scale(1.1);}
+
+.overlay{
+ position:absolute;
+ inset:0;
+ background:linear-gradient(to top, rgba(0,0,0,.6), transparent);
+ opacity:0;
+ transition:.4s;
+ display:flex;
+ align-items:flex:end;
+ padding:15px;
+ color:white;
+ font-weight:600;
+}
+
+.project:hover .overlay{opacity:1;}
+
+.project-content{padding:15px;}
+
+.project h3{margin-bottom:8px;color:var(--main);}
+
+button{
+ background:var(--main);
+ color:white;
+ border:none;
+ padding:10px 18px;
+ border-radius:8px;
+ cursor:pointer;
+ transition:.3s;
+ font-weight:600;
+}
+
+button:hover{
+ background:var(--dark);
+ transform:translateY(-2px);
+ box-shadow:0 8px 20px rgba(124,81,198,.25);
+}
+
+/* CONTACTO */
+.contact-card{
+ text-align:center;
+ background:#ffe0ec;
+ border:1px solid #f3b6cc;
+ box-shadow:0 10px 30px rgba(255,182,210,.35);
+}
+
+.profile-pic{
+ width:150px;
+ height:150px;
+ object-fit:cover;
+ border-radius:50%;
+ border:6px solid #fff;
+ box-shadow:
+ 0 10px 30px rgba(0,0,0,.12),
+ 0 0 0 4px #f1e7fb;
+ margin-bottom:12px;
+ transition:transform .35s ease, box-shadow .35s ease;
+}
+
+/* efecto pro al pasar el mous espero se mire bien pro porque me duele la cabeza jajaja */
+.profile-pic:hover{
+ transform:scale(1.06);
+ box-shadow:
+ 0 18px 40px rgba(0,0,0,.18),
+ 0 0 0 6px #eadbfb;
+}
+
+.contact-box{
+ max-width:420px;
+ margin:20px auto 0 auto;
+}
+
+.socials a{
+ margin:0 8px;
+ text-decoration:none;
+ color:var(--main);
+ font-weight:600;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea{
+ width:100%;
+ padding:10px;
+ margin-top:10px;
+ border-radius:8px;
+ border:1px solid #ddd;
+}
+
+.contact-form textarea{
+ min-height:90px;
+ resize:none;
+}
+
+.contact-form button{
+ width:100%;
+ margin-top:12px;
+}
+
+/* FOOTER */
+footer{
+ background:var(--dark);
+ color:white;
+ text-align:center;
+ padding:30px;
+ margin-top:40px;
+}
+
+/* ANIMACION */
+.fade-in{
+ opacity:0;
+ transform:translateY(20px);
+ animation:fadeIn .9s ease forwards;
+}
+
+@keyframes fadeIn{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+ .grid{grid-template-columns:1fr;}
+}
+.contact-buttons{
+ display:flex;
+ flex-direction:column;
+ gap:12px;
+ margin-top:20px;
+}
+
+.btn-contact{
+ display:block;
+ padding:12px;
+ border-radius:10px;
+ text-decoration:none;
+ color:white;
+ font-weight:600;
+ transition:.3s;
+}
+
+.facebook{background:#8bb9f4;}
+.whatsapp{background:#8ed4b1;}
+.tiktok{background:#4b4848;}
+.email{background:#c6aae6;}
+
+.btn-contact:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(46, 36, 36, 0.15);
+}
+/* ===== EMAIL PRO ===== */
+.email{
+ font-weight:600;
+ margin:18px auto 8px auto;
+ padding:10px 18px;
+ background:white;
+ border:2px solid #e6d7f5;
+ border-radius:999px;
+ width:fit-content;
+ box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+.contact-name{
+ margin-top:10px;
+ font-weight:600;
+ color:#6b5c7a;
+ letter-spacing:.5px;
+}
+
+/* EMAIL ABAJO COPIABLE */
+.email-copy{
+ margin-top:25px;
+ font-size:.9rem;
+ opacity:.7;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.email-copy:hover{
+ opacity:1;
+ transform:translateY(-2px);
+}
+
+/* BOTONES GRANDES */
+.big-btn{
+ display:block;
+ width:100%;
+ max-width:520px;
+ margin:14px auto;
+ padding:16px;
+ border-radius:14px;
+ text-decoration:none;
+ color:white;
+ font-weight:600;
+ transition:.3s;
+}
+
+.big-btn:hover{
+ transform:translateY(-3px);
+ box-shadow:0 12px 25px rgba(0,0,0,.18);
+}
+
+.fb{ background:#6e9ce0; }
+.wa{ background:#8fd2a2; }
+.tk{ background:#555; }
+/* EMAIL CLICKEABLE */
+.email-copy{
+  margin-top:25px;
+  color:#7a6f86;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.3s;
+  display:inline-block;
+}
+
+.email-copy:hover{
+  transform:scale(1.05);
+  color:#5c5470;
+}
+
+/* TOAST BONITO */
+#toast{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#5c5470;
+  color:white;
+  padding:12px 22px;
+  border-radius:14px;
+  font-size:14px;
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+#toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+.profile-pic{
+ animation:popIn .7s ease;
+}
+
+@keyframes popIn{
+ 0%{
+  opacity:0;
+  transform:scale(.85);
+ }
+ 100%{
+  opacity:1;
+  transform:scale(1);
+ }
+}
+/* BOTONES GRANDES PRO */
+.big-btn{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:12px;
+ padding:16px 22px;
+ border-radius:14px;
+ text-decoration:none;
+ color:white;
+ font-weight:600;
+ transition:.35s;
+ box-shadow:0 8px 20px rgba(0,0,0,.12);
+ margin-top:12px;
+}
+
+.big-btn i{
+ font-size:18px;
+}
+
+/* COLORES */
+.fb{ background:#6f8fcf; }
+.wa{ background:#7fb48d; }
+.tk{ background:#444; }
+
+/* HOVER */
+.big-btn:hover{
+ transform:translateY(-3px) scale(1.02);
+ box-shadow:0 14px 30px rgba(0,0,0,.18);
+}
+
+/* EMAIL */
+.email-copy{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:10px;
+ margin-top:18px;
+ color:#6f6a8b;
+ text-decoration:none;
+ font-weight:500;
+ transition:.3s;
+}
+
+.email-copy:hover{
+ color:var(--main);
+ transform:translateY(-2px);
+}
+
+/* WHATSAPP PULSE */
+.pulse{
+ animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+ 0%{ box-shadow:0 0 0 0 rgba(127,180,141,.5); }
+ 70%{ box-shadow:0 0 0 14px rgba(127,180,141,0); }
+ 100%{ box-shadow:0 0 0 0 rgba(127,180,141,0); }
+}
+/* VISOR PROYECTOS */
+.img-viewer{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.85);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:999;
+ padding:20px;
+}
+
+.img-viewer img{
+ max-width:90%;
+ max-height:85vh;
+ border-radius:12px;
+ box-shadow:0 20px 60px rgba(0,0,0,.6);
+ animation:zoomIn .35s ease;
+}
+
+.close-viewer{
+ position:absolute;
+ top:25px;
+ right:35px;
+ color:white;
+ font-size:38px;
+ cursor:pointer;
+}
+
+@keyframes zoomIn{
+ from{transform:scale(.8);opacity:0;}
+ to{transform:scale(1);opacity:1;}
+}
+
+/* cursor elegante */
+.clickable{
+ cursor:pointer;
+}
+/* ==========================
+   VISOR DE IMAGEN PRO
+   ========================== */
+
+.img-viewer{
+  display:none; /* oculto hasta que hagan click */
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+/* imagen grande */
+.viewer-img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:12px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+  animation:zoom .3s ease;
+}
+
+/* botoncito cerrar */
+.close-viewer{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+/* animacion pro segun yo */
+@keyframes zoom{
+  from{transform:scale(.7); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+.topbar{
+  background: linear-gradient(
+    135deg,
+    #f3e8ff 0%,
+    #fce4ec 50%,
+    #e0f7fa 100%
+  );
+  padding:50px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+#frase{
+  font-size:14px;
+  color:#555;
+  margin-top:10px;
+}

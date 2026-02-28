@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aurora HM | Portafolio</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<section class="hero">
+ <h1>Aurora HM</h1>
+ <p>Estudiante | Diseño | Proyectos</p>
+</section>
+
+<main class="container">
+
+<section class="card center-title fade-in">
+  <h2>Sobre mí</h2>
+  <p>
+  Soy estudiante aprendiendo desarrollo web y diseño digital. 
+  Me interesa crear proyectos creativos y seguir mejorando mis habilidades.
+  </p>
+</section>
+
+<section class="card center-title fade-in">
+  <h2>Habilidades</h2>
+  <div class="grid">
+   <div class="skill">HTML básico</div>
+   <div class="skill">CSS básico</div>
+   <div class="skill">Diseño digital</div>
+   <div class="skill">Creatividad visual</div>
+  </div>
+</section>
+
+<section class="card center-title fade-in">
+  <h2>Proyectos</h2>
+
+  <div class="projects">
+
+    <div class="project">
+      <div class="project-img">
+        <img src="img/logocrochet.jpg">
+      </div>
+      <div class="project-content">
+        <h3>Página práctica HTML</h3>
+        <p>Ejercicio de estructura web con etiquetas semánticas.</p>
+        <button class="ver-proyecto" data-img="img/logocrochet.jpg">
+  Ver más
+</button>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-img">
+        <img src="img/menu1.png" class="clickable">
+      </div>
+      <div class="project-content">
+        <h3>Formulario CSS</h3>
+        <p>Diseño de formulario usando box model y estilos.</p>
+        <button class="ver-proyecto" data-img="img/menu1.png">
+  Ver más
+</button>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-img">
+        <img src="img/plantilla-de-video.jpg" class="clickable">
+      </div>
+      <div class="project-content">
+        <h3>Proyecto en proceso</h3>
+        <p>Aquí colocaré mis trabajos futuros del curso.</p>
+        <button class="ver-proyecto" data-img="img/menu1.png">
+  Ver más
+</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="card contact-card center-title fade-in">
+
+  <img src="img/imegenportada.jpg" class="profile-pic">
+
+  <h3 class="contact-name">Aurora HM</h3>
+
+  <div class="contact-box">
+
+    <a class="big-btn fb"
+       href="https://www.facebook.com/share/1ZmfSfZPrY/?mibextid=wwXIfr"
+       target="_blank" rel="noopener noreferrer">
+       <i class="fa-brands fa-facebook-f"></i>
+       Ver mi trabajo en Facebook
+    </a>
+
+    <a class="big-btn wa pulse"
+       href="https://wa.me/5215516643042590?text=Hola%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20trabajo"
+       target="_blank" rel="noopener noreferrer">
+       <i class="fa-brands fa-whatsapp"></i>
+       Escríbeme por WhatsApp
+    </a>
+
+    <a class="big-btn tk"
+       href="https://www.tiktok.com/@aurorahmar"
+       target="_blank" rel="noopener noreferrer">
+       <i class="fa-brands fa-tiktok"></i>
+       Contenido creativo en TikTok
+    </a>
+
+    <!-- EMAIL OCULTO HASTA HOVER -->
+    <p class="email-pro">
+      <i class="fa-regular fa-envelope"></i>
+      <span>aurorahm072@gmail.com</span>
+    </p>
+
+
+  </div>
+
+</section>
+
+<div id="toast">Correo copiado</div>
+
+</main>
+
+<footer>
+ <p>Portafolio académico – Aurora HM</p>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+function copiarEmail(el){
+  const email = "Miemail@email.com";
+  const toast = document.getElementById("toast");
+
+  navigator.clipboard.writeText(email).then(() => {
+
+    // cambia texto temporal 
+    const original = el.innerHTML;
+    el.innerHTML = "✔ Copiado";
+
+    // muestra toast //me duele la cabeza aiuda
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+      el.innerHTML = original;
+      toast.classList.remove("show");
+    },2000);
+
+  });
+}
+</script>
+<!-- VISOR DE IMAGEN PRO -->
+<div id="imgViewer" class="img-viewer">
+<span class="close-viewer">&times;</span>
+<img class="viewer-img" id="viewerImg">
+</div>
+</body>
+</html>
